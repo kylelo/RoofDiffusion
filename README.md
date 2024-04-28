@@ -5,13 +5,13 @@ Welcome to the official implementation of paper "RoofDiffusion: Constructing Roo
  <a href="https://arxiv.org/abs/2404.09290"><img  src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a> </h1> 
 
 ## Setup
-```
+```console
 conda env create -f environment.yml
 conda activate RoofDiffusion
 ```
 
 ## Download Dataset \& Pretrained Model
-https://drive.google.com/drive/folders/1o_I4Z-9xRT7PqBgXQQgVUlcDOwOTT9Qj?usp=drive_link
+Download [here](https://drive.google.com/drive/folders/1o_I4Z-9xRT7PqBgXQQgVUlcDOwOTT9Qj?usp=drive_link) .
 
 Unzip and place dataset under the `RoofDiffusion/dataset` of repo e.g. `RoofDiffusion/dataset/PoznanRD`
 
@@ -23,23 +23,23 @@ Or place No-NF RoofDiffusion pretrained model at `RoofDiffusion/pretrained/wo_fo
 
 ## Training
 **RoofDiffusion**
-```python
+```console
 python run.py -p train -c config/roof_completion.json
 ```
 
 **No-FP RoofDiffusion**
-```python
+```console
 python run.py -p train -c config/roof_completion_no_footprint.json
 ```
 
 See training progress
-```
+```console
 tensorboard --logdir experiments/train_roof_completion_XXXXXX_XXXXXX
 ```
 
 ## Inference
 Use `roof_completion.json` for training the RoofDiffusion model with the footprint version, where in each footprint image, a pixel value of 1 denotes the building footprint and 0 denotes areas outside the footprint. 
-```python
+```console
 python run.py -p test -c config/roof_completion.json \
     --resume ./pretrained/w_footprint/260 \
     --n_timestep 500 \
@@ -48,7 +48,7 @@ python run.py -p test -c config/roof_completion.json \
 ```
 
 Use `roof_completion_no_footprint.json` for training with footprint images where all pixels are set to 1, indicating no distinction between inside and outside footprint areas.
-```python
+```console
 python run.py -p test -c config/roof_completion_no_footprint.json \
     --resume ./pretrained/wo_footprint/140 \
     --n_timestep 500 \
@@ -60,7 +60,7 @@ python run.py -p test -c config/roof_completion_no_footprint.json \
 
 ## Customize New Benchmark
 Make costomized benchmark by adjusting parameters in `make_test_image.py` and run
-```python
+```console
 python gen_benchmark.py
 ```
 
@@ -76,7 +76,7 @@ Modify JSON config file:
 ## Metric
 Evaluate the predicted roof height map.
 For example:
-```python
+```console
 python data/util/roof_metric.py \
     --gt_dir ./dataset/PoznanRD/benchmark/w_footprint/s95_i30/roof_gt \
     --footprint_dir ./dataset/PoznanRD/benchmark/w_footprint/s95_i30/roof_footprint \
