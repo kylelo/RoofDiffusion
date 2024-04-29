@@ -64,7 +64,7 @@ Make costomized benchmark by adjusting parameters in `make_test_image.py` and ru
 python gen_benchmark.py
 ```
 
-## Customize Data Sytheiszion for Training
+## Customize Data Synthesis for Training
 Modify JSON config file:
 - `"down_res_pct"` controls sparsity.
 - `"local_remove"` adjusts local incompleteness (Please refer to paper for details).
