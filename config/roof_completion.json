@@ -20,7 +20,7 @@
                 "args":{ // arguments to initialize dataset
                     "data_root": "./dataset/PoznanRD/train_img.flist",
                     "footprint_root": "./dataset/PoznanRD/train_footprint.flist",
-                    "data_len": 100,
+                    "data_len": -1,
                     "use_footprint": true,
                     "mask_config": {
                         "down_res_pct": [99, 98, 90, 80, 50, 25], // Sparsity 0-100
@@ -152,7 +152,7 @@
             }
         ],
         "which_losses": [ // import designated list of losses without arguments
-            "masked_mse_loss" // import mse_loss() function/class from default file (default is [models/losses.py]), equivalent to { "name": "mse_loss", "args":{}}
+            "masked_l1_loss" // import mse_loss() function/class from default file (default is [models/losses.py]), equivalent to { "name": "mse_loss", "args":{}}
         ],
         "which_metrics": [ // import designated list of metrics without arguments
             "mae" // import mae() function/class from default file (default is [models/metrics.py]), equivalent to { "name": "mae", "args":{}}

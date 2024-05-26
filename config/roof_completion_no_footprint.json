@@ -20,7 +20,7 @@
                 "args":{ // arguments to initialize dataset
                     "data_root": "./dataset/PoznanRD/train_img.flist",
                     "footprint_root": "./dataset/PoznanRD/train_footprint.flist",
-                    "data_len": 200,
+                    "data_len": -1,
                     "use_footprint": false,
                     "mask_config": {
                         "down_res_pct": [99, 98, 90, 80, 50, 25], // Sparsity 0-100
