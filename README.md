@@ -23,11 +23,15 @@ Or place No-NF RoofDiffusion pretrained model at `RoofDiffusion/pretrained/wo_fo
 
 ## Training
 **RoofDiffusion**
+
+Use `roof_completion.json` for training the RoofDiffusion model with the footprint version, where in each footprint image, a pixel value of 1 denotes the building footprint and 0 denotes areas outside the footprint. 
 ```console
 python run.py -p train -c config/roof_completion.json
 ```
 
 **No-FP RoofDiffusion**
+
+Use `roof_completion_no_footprint.json` for training with footprint images where all pixels are set to 1, indicating no distinction between inside and outside footprint areas.
 ```console
 python run.py -p train -c config/roof_completion_no_footprint.json
 ```
@@ -38,7 +42,7 @@ tensorboard --logdir experiments/train_roof_completion_XXXXXX_XXXXXX
 ```
 
 ## Inference
-Use `roof_completion.json` for training the RoofDiffusion model with the footprint version, where in each footprint image, a pixel value of 1 denotes the building footprint and 0 denotes areas outside the footprint. 
+**RoofDiffusion**
 ```console
 python run.py -p test -c config/roof_completion.json \
     --resume ./pretrained/w_footprint/260 \
@@ -47,7 +51,7 @@ python run.py -p test -c config/roof_completion.json \
     --footprint_root ./dataset/PoznanRD/benchmark/w_footprint/s95_i30/footprint.flist
 ```
 
-Use `roof_completion_no_footprint.json` for training with footprint images where all pixels are set to 1, indicating no distinction between inside and outside footprint areas.
+**No-FP RoofDiffusion**
 ```console
 python run.py -p test -c config/roof_completion_no_footprint.json \
     --resume ./pretrained/wo_footprint/140 \
