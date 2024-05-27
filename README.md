@@ -87,7 +87,7 @@ python data/util/roof_metric.py \
     --pred_dir PRED_DIR \
     --img_name_prefix IMG_NAME_PREFIX
 ```
-Set the path the the images predicted by model e.g. `PRED_DIR="experiments/test_roof_completion_XXXXXX_XXXXXX/results/test/0"` \
+Set the path to the images predicted by model e.g. `PRED_DIR="experiments/test_roof_completion_XXXXXX_XXXXXX/results/test/0"` \
 For PoznanRD dataset, `IMG_NAME_PREFIX="BID"`. \
 For Cambridge and WayneCo dataset, `IMG_NAME_PREFIX=""`.
 
