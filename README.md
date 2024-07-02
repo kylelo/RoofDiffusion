@@ -4,6 +4,10 @@ Welcome to the official implementation of paper "RoofDiffusion: Constructing Roo
 <h1 align="left">RoofDiffusion: Constructing Roofs from Severely Corrupted Point Data via Diffusion
  <a href="https://arxiv.org/abs/2404.09290"><img  src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a> </h1> 
 
+Update: We are excited to share that our work has been accepted for ECCV 2024! 🎉
+
+![Demo](demo.png)
+
 ## Setup
 ```console
 conda env create -f environment.yml
@@ -100,3 +104,13 @@ Reproduce paper results by running shell scripts files from project's root folde
 ## Acknowledge
 This project is based on the following wonderful implementation of the paper [Palette: Image-to-Image Diffusion Models](https://arxiv.org/abs/2111.05826) \
 https://github.com/Janspiry/Palette-Image-to-Image-Diffusion-Models
+
+## Citing
+```
+@article{lo2024roofdiffusion,
+  title={RoofDiffusion: Constructing Roofs from Severely Corrupted Point Data via Diffusion},
+  author={Lo, Kyle Shih-Huang and Peters, J{\"o}rg and Spellman, Eric},
+  journal={arXiv preprint arXiv:2404.09290},
+  year={2024}
+}
+```
